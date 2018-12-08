@@ -12,14 +12,7 @@
           <i class="material-icons">place</i> {{ coordinates.lat.toFixed(3) }} : {{ coordinates.lng.toFixed(3) }}
         </p>
         <p>
-          <vue-bootstrap-typeahead
-            :data="addresses"
-            v-model="addressSearch"
-            size="lg"
-            :serializer="s => s.text"
-            placeholder="Type an address..."
-            @hit="selectedAddress = $event">
-          </vue-bootstrap-typeahead>
+          {{ address }}
         </p>
         <div class="toolbar">
           <div class="btn" v-on:click="nextSite">
@@ -33,16 +26,13 @@
 
 <script>
 import SlideView from '../elements/View'
-
-const API_URL = 'https://api-url-here.com?query=:query'
+import axios from 'axios';
 
 export default {
   data () {
     return {
       coordinates: { lat: 0, lng: 0 },
-      addresses: [],
-      addressSearch: '',
-      selectedAddress: null
+      address: "",
     }
   },
   components: {
@@ -64,12 +54,14 @@ export default {
     this.$getLocation()
       .then(coordinates => {
         this.coordinates = coordinates
+        axios.get(`https://geocode.xyz/${coordinates.lat},${coordinates.lng}?geoit=json`)
+          .then((response) => {
+            // handle success
+            this.address = response.data.staddress + ", " + response.data.region + ", " + response.data.country
+          })
       });
   },
   destroyed () {
-  },
-  watch: {
-//    addressSearch: _.debounce(function(addr) { this.getAddresses(addr) }, 500)
   }
 }
 </script>
