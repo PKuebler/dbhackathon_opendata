@@ -1,0 +1,5 @@
+[Settings]
+[build]
+  base = "src/"
+  publish = "src/public"
+  command = "npm run prod"
