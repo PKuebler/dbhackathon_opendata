@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="logo hide-mobile"><i class="material-icons">train</i> <span>WegVonHier.de</span></div>
+    <router-link class="logo hide-mobile" to="/"><i class="material-icons">train</i> <span>WegVonHier.de</span></router-link>
     <div class="app" ref="viewport">
       <transition name="slide">
         <router-view></router-view>
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     scrollToTop () {
-      this.$el.scrollTop = 0
+      this.$el.querySelector('.app').scrollTop = 0
     }
   },
   mounted () {
@@ -74,6 +74,7 @@ h2 {
   margin-left: -300px;
   margin-top: -310px;
   color: #fff;
+  text-decoration: none;
 
   .material-icons {
     font-size: 60px;

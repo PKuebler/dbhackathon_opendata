@@ -7,15 +7,20 @@
         <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
       </div>
       <div class="content">
-
-        <vue-bootstrap-typeahead
-          :data="addresses"
-          v-model="addressSearch"
-          size="lg"
-          :serializer="s => s.text"
-          placeholder="Type an address..."
-          @hit="selectedAddress = $event">
-        </vue-bootstrap-typeahead>
+        <h2>Aktuelle Position</h2>
+        <p>
+          <i class="material-icons">place</i> {{ coordinates.lat.toFixed(3) }} : {{ coordinates.lng.toFixed(3) }}
+        </p>
+        <p>
+          <vue-bootstrap-typeahead
+            :data="addresses"
+            v-model="addressSearch"
+            size="lg"
+            :serializer="s => s.text"
+            placeholder="Type an address..."
+            @hit="selectedAddress = $event">
+          </vue-bootstrap-typeahead>
+        </p>
         <div class="toolbar">
           <div class="btn" v-on:click="nextSite">
             Weiter
@@ -34,6 +39,7 @@ const API_URL = 'https://api-url-here.com?query=:query'
 export default {
   data () {
     return {
+      coordinates: { lat: 0, lng: 0 },
       addresses: [],
       addressSearch: '',
       selectedAddress: null
@@ -55,6 +61,10 @@ export default {
     }
   },
   mounted () {
+    this.$getLocation()
+      .then(coordinates => {
+        this.coordinates = coordinates
+      });
   },
   destroyed () {
   },

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './store'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
+import VueGeolocation from 'vue-browser-geolocation'
 
 import App from './components/App'
 
@@ -14,6 +15,7 @@ import Checkout from './components/steps/Checkout'
 
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 Vue.use(VueRouter)
+Vue.use(VueGeolocation)
 
 const routes = [
   { path: '/', component: Start },
