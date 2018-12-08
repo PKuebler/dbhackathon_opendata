@@ -1,8 +1,11 @@
 <template>
-  <div class="app" ref="viewport">
-    <transition name="slide">
-      <router-view></router-view>
-    </transition>
+  <div>
+    <div class="logo hide-mobile"><i class="material-icons">train</i> <span>WegVonHier.de</span></div>
+    <div class="app" ref="viewport">
+      <transition name="slide">
+        <router-view></router-view>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -58,6 +61,25 @@ h2 {
   margin: 20px 20px 30px;
   font-size: 14px;
   border-radius: 3px;
+}
+.logo {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 600px;
+  margin-left: -300px;
+  margin-top: -310px;
+  color: #fff;
+
+  .material-icons {
+    font-size: 60px;
+    line-height: 40px;
+    vertical-align: text-bottom;
+  }
 }
 p {
   padding: 10px 30px 20px;

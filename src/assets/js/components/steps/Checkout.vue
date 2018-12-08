@@ -4,6 +4,7 @@
       <div class="desc">
         <h1>Bestätigung</h1>
         <img class="svg" src="img/undraw_confirmation_2uy0.svg">
+        <div class="details">Reise am {{ select.date.day }}.{{ select.date.month }}.</div>
       </div>
       <div class="content">
         <p>Vor 8 Uhr:</p>
@@ -21,6 +22,8 @@
 
 <script>
 import SlideView from '../elements/View'
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
@@ -30,6 +33,7 @@ export default {
     SlideView
   },
   computed: {
+    ...mapState(['select'])
   },
   methods: {
   },
