@@ -96,6 +96,7 @@ img.svg {
 
     .view {
       background: linear-gradient(90deg, #ebecf0 55%, #ffffff 45%);
+      min-height: 400px;
 
       section {
         position: relative;

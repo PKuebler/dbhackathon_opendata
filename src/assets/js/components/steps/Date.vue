@@ -95,7 +95,7 @@ section {
   text-align: center;
 
   .currentDate {
-    margin: 60px 0 30px;
+    padding: 60px 0 30px;
     div {
       font-family: 'Work Sans', sans-serif;
       font-weight: 600;
@@ -111,7 +111,7 @@ section {
       top: 30%;
 
       @media (min-width: 600px) {
-        top: 0px;
+        top: 30px;
       }
     }
     .slider-month {
@@ -120,7 +120,7 @@ section {
       top: 30%;
 
       @media (min-width: 600px) {
-        top: 0px;
+        top: 30px;
         right: 48%;
       }
     }

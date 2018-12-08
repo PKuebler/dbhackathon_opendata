@@ -6,15 +6,6 @@
       <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
     </div>
     <div class="content">
-      <h2>Max Preis p.P. wählen</h2>
-
-      <vue-slider
-        ref="slider-price"
-        class="slider-price"
-        v-bind="slider.price"
-        v-model="price">
-      </vue-slider>
-
       <h2>Personen</h2>
 
       <div class="select-persons">
@@ -36,13 +27,11 @@
 </template>
 
 <script>
-import vueSlider from 'vue-slider-component'
 import { mapState } from 'vuex'
 
 export default {
   data () {
     return {
-      price: 20,
       persons: 1,
       slider: {
         price: {
@@ -55,7 +44,6 @@ export default {
     }
   },
   components: {
-    vueSlider
   },
   computed: {
     ...mapState(['select'])
@@ -69,7 +57,6 @@ export default {
     },
     nextSite () {
       this.$store.commit('SET_PERSONS', this.persons)
-      this.$store.commit('SET_PRICE', this.price)
       this.$store.commit('SELECT_SITE', 'select_cities')
     }
   },

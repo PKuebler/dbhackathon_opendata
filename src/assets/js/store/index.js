@@ -26,7 +26,6 @@ const store = new Vuex.Store({
     currentSite: 'start',
     select: {
       city: null,
-      price: 50,
       persons: 1,
       date: { day: 1, month: 5 },
       selected: Object.keys(cities)
@@ -51,9 +50,6 @@ const store = new Vuex.Store({
     },
     SET_PERSONS (state, payload) {
       state.select.persons = payload
-    },
-    SET_PRICE (state, payload) {
-      state.select.price = payload
     },
     SELECT_SITE (state, payload) {
       state.currentSite = payload
