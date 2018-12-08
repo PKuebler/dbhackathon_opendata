@@ -46,6 +46,7 @@ export default {
       this.addresses = suggestions.suggestions
     },
     nextSite () {
+      this.$emit('change_site')
       this.$store.commit('SELECT_SITE', 'date')
     }
   },

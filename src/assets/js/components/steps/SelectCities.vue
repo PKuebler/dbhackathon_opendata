@@ -5,7 +5,7 @@
       <img class="svg" src="img/undraw_post_online_dkuk.svg">
       <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
     </div>
-    <div class="content">
+    <div class="content" id="element">
       <div class="select-cities">
         <div
           class="select-cities-entry"
@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="toolbar">
-        <div class="btn" v-on:click="nextSite">
+        <div class="btn" v-on:click="nextSite" v-scroll-to="'#element'">
           Weiter
         </div>
       </div>
@@ -46,6 +46,7 @@ export default {
       return (this.select.selected.indexOf(key) > -1) ? 'check' : 'close'
     },
     nextSite () {
+      this.$emit('change_site')
       this.$store.commit('SELECT_SITE', 'checkout')
     }
   },

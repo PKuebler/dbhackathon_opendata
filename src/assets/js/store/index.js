@@ -21,13 +21,17 @@ const cities = {
   15: 'Stuttgart Hbf'
 }
 
+const date = new Date();
+const d = date.getDate();
+const m = date.getMonth() + 1;
+
 const store = new Vuex.Store({
   state: {
     currentSite: 'start',
     select: {
       city: null,
       persons: 1,
-      date: { day: 1, month: 5 },
+      date: { day: d, month: m },
       selected: Object.keys(cities)
     },
     cities

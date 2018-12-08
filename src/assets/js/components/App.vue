@@ -1,10 +1,12 @@
 <template>
-  <div class="app">
+  <div class="app" ref="viewport">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
@@ -13,10 +15,21 @@ export default {
   components: {
   },
   computed: {
+    ...mapState(['currentSite'])
   },
   methods: {
+    scrollToTop () {
+      this.$el.scrollTop = 0
+    }
   },
   mounted () {
+  },
+  destroyed () {
+  },
+  watch: {
+    currentSite: function (val) {
+      this.scrollToTop()
+    },
   }
 }
 </script>

@@ -80,6 +80,7 @@ export default {
         day: this.day,
         month: this.month
       })
+      this.$emit('change_site')
       this.$store.commit('SELECT_SITE', 'price')
     }
   },

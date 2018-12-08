@@ -57,6 +57,7 @@ export default {
     },
     nextSite () {
       this.$store.commit('SET_PERSONS', this.persons)
+      this.$emit('change_site')
       this.$store.commit('SELECT_SITE', 'select_cities')
     }
   },
