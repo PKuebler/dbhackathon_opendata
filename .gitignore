@@ -2,6 +2,8 @@
 # Created by https://www.gitignore.io/api/node,eclipse,phpstorm,sublimetext,visualstudio,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,eclipse,phpstorm,sublimetext,visualstudio,visualstudiocode
 
+public/
+
 ### Eclipse ###
 
 .metadata

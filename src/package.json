@@ -12,6 +12,7 @@
 		"lint:eslint": "eslint --ext .js,.vue assets/js"
 	},
 	"devDependencies": {
+    "cross-env": "*",
 		"axios": "^0.18.0",
 		"eslint": "^5.8.0",
 		"eslint-config-standard": "^12.0.0",
