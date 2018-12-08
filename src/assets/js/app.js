@@ -13,7 +13,6 @@ import Price from './components/steps/Price'
 import SelectCities from './components/steps/SelectCities'
 import Checkout from './components/steps/Checkout'
 
-Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 Vue.use(VueRouter)
 Vue.use(VueGeolocation)
 
