@@ -1,32 +1,35 @@
 <template>
-  <section>
-    <div class="desc">
-      <h1>Wer?</h1>
-      <img class="svg" src="img/undraw_group_selfie_ijc6.svg">
-      <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-    </div>
-    <div class="content">
-      <h2>Personen</h2>
+  <SlideView key="price">
+    <section>
+      <div class="desc">
+        <h1>Wer?</h1>
+        <img class="svg" src="img/undraw_group_selfie_ijc6.svg">
+        <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+      </div>
+      <div class="content">
+        <h2>Personen</h2>
 
-      <div class="select-persons">
-        <div
-          class="material-icons"
-          v-for="n in 6"
-          v-on:click="selectPersons(n)"
-          v-bind:key="n">
-          {{ getIcon(n) }}
+        <div class="select-persons">
+          <div
+            class="material-icons"
+            v-for="n in 6"
+            v-on:click="selectPersons(n)"
+            v-bind:key="n">
+            {{ getIcon(n) }}
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="btn" v-on:click="nextSite">
+            Weiter
+          </div>
         </div>
       </div>
-      <div class="toolbar">
-        <div class="btn" v-on:click="nextSite">
-          Weiter
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </SlideView>
 </template>
 
 <script>
+import SlideView from '../elements/View'
 import { mapState } from 'vuex'
 
 export default {
@@ -44,6 +47,7 @@ export default {
     }
   },
   components: {
+    SlideView
   },
   computed: {
     ...mapState(['select'])
@@ -57,8 +61,7 @@ export default {
     },
     nextSite () {
       this.$store.commit('SET_PERSONS', this.persons)
-      this.$emit('change_site')
-      this.$store.commit('SELECT_SITE', 'select_cities')
+      this.$router.push('/cities')
     }
   },
   mounted () {

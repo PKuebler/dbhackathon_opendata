@@ -2,17 +2,26 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './store'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
-import VueScrollTo from 'vue-scrollto'
 
 import App from './components/App'
-import Surprise from './components/Surprise'
+
+import Start from './components/steps/Start'
+import StartLocation from './components/steps/StartLocation'
+import DateView from './components/steps/Date'
+import Price from './components/steps/Price'
+import SelectCities from './components/steps/SelectCities'
+import Checkout from './components/steps/Checkout'
 
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 Vue.use(VueRouter)
-Vue.use(VueScrollTo)
 
 const routes = [
-  { path: '/', component: Surprise }
+  { path: '/', component: Start },
+  { path: '/location', component: StartLocation },
+  { path: '/date', component: DateView },
+  { path: '/price', component: Price },
+  { path: '/cities', component: SelectCities },
+  { path: '/checkout', component: Checkout }
 ]
 
 const router = new VueRouter({

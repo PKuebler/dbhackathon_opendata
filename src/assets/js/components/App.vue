@@ -1,6 +1,8 @@
 <template>
   <div class="app" ref="viewport">
-    <router-view></router-view>
+    <transition name="slide">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -27,7 +29,7 @@ export default {
   destroyed () {
   },
   watch: {
-    currentSite: function (val) {
+    $route (to, from){
       this.scrollToTop()
     },
   }
@@ -128,6 +130,16 @@ img.svg {
   .hide-mobile {
     display: block;
   }
+}
 
+.slide-leave-active,
+.slide-enter-active {
+  transition: 1s;
+}
+.slide-enter {
+  transform: translate(100%, 0);
+}
+.slide-leave-to {
+  transform: translate(-100%, 0);
 }
 </style>

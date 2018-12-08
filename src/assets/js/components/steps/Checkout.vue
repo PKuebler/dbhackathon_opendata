@@ -1,29 +1,33 @@
 <template>
-  <section>
-    <div class="desc">
-      <h1>Bestätigung</h1>
-      <img class="svg" src="img/undraw_confirmation_2uy0.svg">
-    </div>
-    <div class="content">
-      <p>Vor 8 Uhr:</p>
-      <div class="details">Hamburg 15,-</div>
+  <SlideView key="checkout">
+    <section>
+      <div class="desc">
+        <h1>Bestätigung</h1>
+        <img class="svg" src="img/undraw_confirmation_2uy0.svg">
+      </div>
+      <div class="content">
+        <p>Vor 8 Uhr:</p>
+        <div class="details">Hamburg 15,-</div>
 
-      <p>Mittags:</p>
-      <div class="details">München 15,-</div>
+        <p>Mittags:</p>
+        <div class="details">München 15,-</div>
 
-      <p>Nach 16 Uhr:</p>
-      <div class="details">Köln 15,-</div>
-    </div>
-  </section>
+        <p>Nach 16 Uhr:</p>
+        <div class="details">Köln 15,-</div>
+      </div>
+    </section>
+  </SlideView>
 </template>
 
 <script>
+import SlideView from '../elements/View'
 export default {
   data () {
     return {
     }
   },
   components: {
+    SlideView
   },
   computed: {
   },
