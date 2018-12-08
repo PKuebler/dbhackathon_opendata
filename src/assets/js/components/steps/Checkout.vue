@@ -4,17 +4,24 @@
       <div class="desc">
         <h1>Bestätigung</h1>
         <img class="svg" src="img/undraw_confirmation_2uy0.svg">
-        <div class="details">Reise am {{ select.date.day }}.{{ select.date.month }}.</div>
+        <div class="details">
+          Reise am {{ select.date.day }}.{{ select.date.month }}.<br />
+          Personen: {{ select.persons }}<br />
+          Von: {{ select.address }}
+        </div>
       </div>
       <div class="content">
         <p>Vor 8 Uhr:</p>
-        <div class="details">Hamburg 15,-</div>
+        <div class="details button">
+          {{ stations.before }} 19,00 &euro;
+          <i class="material-icons">arrow_forward_ios</i>
+        </div>
 
-        <p>Mittags:</p>
-        <div class="details">München 15,-</div>
-
-        <p>Nach 16 Uhr:</p>
-        <div class="details">Köln 15,-</div>
+        <p>Nach 8 Uhr:</p>
+        <div class="details button">
+          {{ stations.after }} 24,00 &euro;
+          <i class="material-icons">arrow_forward_ios</i>
+        </div>
       </div>
     </section>
   </SlideView>
@@ -33,9 +40,26 @@ export default {
     SlideView
   },
   computed: {
-    ...mapState(['select'])
+    ...mapState(['select', 'cities']),
+    stations() {
+      const stations = this.shuffle(Object.keys(this.cities).filter((key) => {
+        return this.select.selected.indexOf(key) > -1
+      }));
+
+      return {
+        before: (stations.length > 0)?this.cities[stations[0]]:'',
+        after: (stations.length > 1)?this.cities[stations[1]]:''
+      }
+    }
   },
   methods: {
+    shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
   },
   mounted () {
   }
@@ -51,6 +75,22 @@ export default {
   margin: 20px 20px 30px;
   font-size: 14px;
   border-radius: 3px;
+  position: relative;
+
+  &.button {
+    background: #ff0000;
+    cursor: pointer;
+
+    &:hover {
+      background: #353535;
+    }
+
+    .material-icons {
+      position: absolute;
+      right: 10px;
+      font-size: 16px;
+    }
+  }
 }
 
 p {

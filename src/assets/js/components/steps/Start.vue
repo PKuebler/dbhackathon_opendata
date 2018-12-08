@@ -4,7 +4,7 @@
       <div class="desc">
         <h1>Weg von hier</h1>
         <img class="svg" src="img/undraw_map_1r69.svg" />
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <p>Finde den billigsten Zug weg von hier!</p>
       </div>
       <div class="content">
         <div class="toolbar">

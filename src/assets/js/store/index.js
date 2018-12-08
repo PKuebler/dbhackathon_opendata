@@ -32,7 +32,8 @@ const store = new Vuex.Store({
       city: null,
       persons: 1,
       date: { day: d, month: m },
-      selected: Object.keys(cities)
+      selected: Object.keys(cities),
+      address: "",
     },
     cities
   },
@@ -54,6 +55,9 @@ const store = new Vuex.Store({
     },
     SET_PERSONS (state, payload) {
       state.select.persons = payload
+    },
+    SET_ADDRESS (state, payload) {
+      state.select.address = payload
     },
     SELECT_SITE (state, payload) {
       state.currentSite = payload

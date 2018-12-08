@@ -4,7 +4,7 @@
       <div class="desc">
         <h1>Startpunkt</h1>
         <img class="svg" src="img/undraw_map_1r69.svg" />
-        <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <p class="hide-mobile">Es geht direkt von deiner Position aus los!</p>
       </div>
       <div class="content">
         <h2>Aktuelle Position</h2>
@@ -58,6 +58,7 @@ export default {
           .then((response) => {
             // handle success
             this.address = response.data.staddress + ", " + response.data.region + ", " + response.data.country
+            this.$store.commit('SET_ADDRESS', this.address)
           })
       });
   },

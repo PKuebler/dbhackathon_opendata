@@ -4,7 +4,7 @@
       <div class="desc">
         <h1>Städte ausschließen</h1>
         <img class="svg" src="img/undraw_post_online_dkuk.svg">
-        <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        <p class="hide-mobile">Gibt es Orte, die du überhaupt nicht magst?</p>
       </div>
       <div class="content">
         <div class="select-cities">

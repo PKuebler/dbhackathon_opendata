@@ -2,9 +2,9 @@
   <SlideView key="price">
     <section>
       <div class="desc">
-        <h1>Wer?</h1>
+        <h1>Mitfahrer</h1>
         <img class="svg" src="img/undraw_group_selfie_ijc6.svg">
-        <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <p class="hide-mobile">Wer darf dich begleiten?</p>
       </div>
       <div class="content">
         <h2>Personen</h2>

@@ -4,7 +4,7 @@
       <div class="desc">
         <h1>Startdatum wählen</h1>
         <img class="svg" src="img/undraw_schedule_pnbk.svg">
-        <p class="hide-mobile">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <p class="hide-mobile">Wann willst du los? Schiebe die Regler hoch oder runter.</p>
       </div>
       <div class="content">
         <div class="currentDate">
